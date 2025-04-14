@@ -87,6 +87,13 @@ export default function TodoList() {
       };
       const docRef = await addDoc(collection(db, 'tasks'), newTask);
       setTasks([...tasks, { id: docRef.id, ...newTask }]);
+
+      Swal.fire({
+        title: 'Tugas Ditambahkan!',
+        text: 'Tugas baru telah berhasil ditambahkan.',
+        icon: 'success',
+        confirmButtonText: 'Oke',
+      });
     }
   };
 
@@ -104,6 +111,13 @@ export default function TodoList() {
   const deleteTask = async (id: string): Promise<void> => {
     await deleteDoc(doc(db, 'tasks', id));
     setTasks(tasks.filter((task) => task.id !== id));
+
+    Swal.fire({
+      title: 'Tugas Dihapus!',
+      text: 'Tugas telah dihapus.',
+      icon: 'error',
+      confirmButtonText: 'Oke',
+    });
   };
 
   const editTask = async (id: string, currentText: string, currentDeadline: string): Promise<void> => {
@@ -141,7 +155,7 @@ export default function TodoList() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 px-6 py-8 bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-3xl">
+    <div className="max-w-xl mx-auto mt-12 px-6 py-8 bg-gradient-to-br from-blue-200 via-purple-300 to-pink-300 shadow-2xl rounded-3xl">
       <h1 className="text-3xl font-bold text-center text-emerald-600 mb-6">📋 To-Do List</h1>
 
       <div className="flex justify-center mb-6">
