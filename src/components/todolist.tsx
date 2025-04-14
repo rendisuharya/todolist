@@ -155,7 +155,7 @@ export default function TodoList() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 px-6 py-8 bg-gradient-to-br from-blue-200 via-purple-300 to-pink-300 shadow-2xl rounded-3xl">
+    <div className="max-w-xl mx-auto mt-12 px-6 py-8 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 text-white shadow-2xl rounded-3xl">
       <h1 className="text-3xl font-bold text-center text-emerald-600 mb-6">📋 To-Do List</h1>
 
       <div className="flex justify-center mb-6">
