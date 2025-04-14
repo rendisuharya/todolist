@@ -25,6 +25,7 @@ export default function TodoList() {
     {}
   );
 
+
   useEffect(() => {
     const fetchTasks = async () => {
       const querySnapshot = await getDocs(collection(db, 'tasks'));
@@ -37,6 +38,7 @@ export default function TodoList() {
     fetchTasks();
   }, []);
 
+
   useEffect(() => {
     const interval = setInterval(() => {
       const newTimeRemaining: { [key: string]: string } = {};
@@ -48,6 +50,7 @@ export default function TodoList() {
 
     return () => clearInterval(interval);
   }, [tasks]);
+
 
   const calculateTimeRemaining = (deadline: string): string => {
     const deadlineTime = new Date(deadline).getTime();
@@ -62,6 +65,7 @@ export default function TodoList() {
 
     return `${hours}j ${minutes}m ${seconds}d`;
   };
+
 
   const addTask = async (): Promise<void> => {
     const { value: formValues } = await Swal.fire({
@@ -92,6 +96,7 @@ export default function TodoList() {
     }
   };
 
+
   const toggleTask = async (id: string): Promise<void> => {
     const updatedTasks = tasks.map((task) =>
       task.id === id ? { ...task, completed: !task.completed } : task
@@ -103,14 +108,10 @@ export default function TodoList() {
     });
   };
 
+
   const deleteTask = async (id: string): Promise<void> => {
-    try {
-      await deleteDoc(doc(db, 'tasks', id));
-      setTasks(tasks.filter((task) => task.id !== id));
-    } catch (error) {
-      console.error("Gagal menghapus tugas:", error);
-      Swal.fire("Error", "Gagal menghapus tugas", "error");
-    }
+    await deleteDoc(doc(db, 'tasks', id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
   
 
