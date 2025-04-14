@@ -186,15 +186,15 @@ export default function TodoList() {
                   </span>
                   <button
                     onClick={() => deleteTask(task.id)}
-                    className="text-white p-1 rounded bg-red-600 hover:bg-red-800"
+                    className="text-white p-1 rounded bg-red-600 hover:bg-red-800 transition duration-200"
                   >
                     Hapus
                   </button>
                   <button
-                  onClick={() => editTask(task.id, task.text, task.deadline)}
-                  className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800"
+                    onClick={() => editTask(task.id, task.text, task.deadline)}
+                    className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800 transition duration-200"
                   >
-                  Edit
+                    Edit
                   </button>
                 </div>
                 <p className="text-sm text-gray-700">
