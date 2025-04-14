@@ -104,20 +104,9 @@ export default function TodoList() {
   };
 
   const deleteTask = async (id: string): Promise<void> => {
-    try {
-      await deleteDoc(doc(db, 'tasks', id));
-      const querySnapshot = await getDocs(collection(db, 'tasks'));
-      const tasksData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as Task[];
-      setTasks(tasksData);
-    } catch (error) {
-      console.error('Gagal menghapus tugas:', error);
-      Swal.fire('Error', 'Gagal menghapus tugas', 'error');
-    }
+    await deleteDoc(doc(db, 'tasks', id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
-  
 
   return (
     <div className="max-w-md mx-auto mt-10 p-4 bg-white shadow-md rounded-lg">
