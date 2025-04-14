@@ -186,7 +186,7 @@ export default function TodoList() {
                   </span>
                   <button
                     onClick={() => deleteTask(task.id)}
-                    className="ml-10 text-white p-1 rounded bg-red-600 hover:bg-red-800 transition duration-200"
+                    className="ml-50 text-white p-1 rounded bg-red-600 hover:bg-red-800 transition duration-200"
                   >
                     Hapus
                   </button>
