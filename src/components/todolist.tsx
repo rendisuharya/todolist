@@ -191,11 +191,11 @@ export default function TodoList() {
                     Hapus
                   </button>
                   <button
-      onClick={() => editTask(task.id, task.text, task.deadline)}
-      className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800"
-    >
-      Edit
-    </button>
+                  onClick={() => editTask(task.id, task.text, task.deadline)}
+                  className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800"
+                  >
+                  Edit
+                  </button>
                 </div>
                 <p className="text-sm text-gray-700">
                   Deadline: {new Date(task.deadline).toLocaleString()}
