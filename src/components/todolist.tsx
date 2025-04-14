@@ -184,18 +184,20 @@ export default function TodoList() {
                   >
                     {task.text}
                   </span>
+                  <div className="flex gap-1">
                   <button
-                    onClick={() => deleteTask(task.id)}
-                    className="ml-50 text-white p-1 rounded bg-red-600 hover:bg-red-800 transition duration-200"
+                  onClick={() => editTask(task.id, task.text, task.deadline)}
+                  className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800"
                   >
-                    Hapus
+                  Edit
                   </button>
                   <button
-                    onClick={() => editTask(task.id, task.text, task.deadline)}
-                    className="text-white p-1 rounded bg-blue-600 hover:bg-blue-800 transition duration-200"
+                  onClick={() => deleteTask(task.id)}
+                  className="text-white p-1 rounded bg-red-600 hover:bg-red-800"
                   >
-                    Edit
-                  </button>
+                  Hapus
+                </button>
+                </div>
                 </div>
                 <p className="text-sm text-gray-700">
                   Deadline: {new Date(task.deadline).toLocaleString()}
