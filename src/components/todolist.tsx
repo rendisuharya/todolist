@@ -214,7 +214,6 @@ export default function TodoList() {
                     </button>
                   </div>
                 </div>
-
                 <div className="mt-2 flex flex-col text-sm text-gray-600">
                   <span>📅 Deadline: {new Date(task.deadline).toLocaleString()}</span>
                   <span className={`font-medium mt-1 ${isExpired ? 'text-red-500' : 'text-gray-700'}`}>
