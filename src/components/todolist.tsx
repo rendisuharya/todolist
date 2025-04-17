@@ -156,14 +156,14 @@ export default function TodoList() {
 
   return (
     <div className="max-w-xl mx-auto mt-12 px-6 py-8 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 text-white shadow-2xl rounded-3xl">
-      <h1 className="text-3xl font-bold text-center text-emerald-600 mb-6">📋 To-Do List</h1>
+      <h1 className="text-3xl font-bold text-center text-blue-950 mb-6">📋 To-Do List</h1>
 
       <div className="flex justify-center mb-6">
         <button
           onClick={addTask}
           className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-2 rounded-full shadow-md transition"
         >
-          ➕ Tambah Tugas Baru
+          ➕ Tambah Tugas
         </button>
       </div>
 
